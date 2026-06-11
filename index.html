@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunjal B | AI & Cloud Native Engineer</title>
+    <meta name="description" content="Portfolio of Kunjal Baseshankar - AI Engineer, Cloud Architect, and Full-Stack Developer">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@1.0.29/bundled/lenis.min.js"></script>
+    
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- WebGL Background -->
+    <canvas id="webgl-bg"></canvas>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="logo-pulse">KUNJAL<span style="color:var(--cyan)">.</span>B</div>
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+            <div class="progress-text">0%</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">KUNJAL<span class="text-cyan">.</span>B</div>
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#github" class="nav-link">GitHub</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title"><span class="title-first">Kunjal B</span></h1>
+                <div class="typewriter-container">
+                    <span class="typewriter-text"></span><span class="cursor-blink">|</span>
+                </div>
+                
+                <div class="hero-pills">
+                    <span class="pill magnetic"><i data-lucide="code-2"></i> Java / C</span>
+                    <span class="pill magnetic"><i data-lucide="layout"></i> React.js</span>
+                    <span class="pill magnetic"><i data-lucide="database"></i> Node.js</span>
+                    <span class="pill magnetic"><i data-lucide="cloud"></i> DevOps</span>
+                    <span class="pill magnetic"><i data-lucide="cpu"></i> AI Engineering</span>
+                </div>
+
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary magnetic">View Work</a>
+                    <a href="/resume.pdf" class="btn btn-outline magnetic"><i data-lucide="download"></i> Resume</a>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://github.com/Kunjalb29" target="_blank" class="magnetic"><i data-lucide="github"></i></a>
+                    <a href="https://linkedin.com/in/kunjal-baseshankar-16a174292" target="_blank" class="magnetic"><i data-lucide="linkedin"></i></a>
+                    <a href="mailto:kunjalb882@gmail.com" class="magnetic"><i data-lucide="mail"></i></a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <!-- 3D Holographic object container -->
+                <canvas id="hero-canvas"></canvas>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="section-header">
+                <span class="eyebrow">The Journey</span>
+                <h2 class="section-title">From Student to <span class="text-gradient">AI Engineer</span></h2>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-text glass-panel">
+                    <p>I am a Software Engineer pursuing my B.Tech in Computer Science at KL University (CGPA 9.25/10.0), specializing in high-performance cloud architectures, artificial intelligence, and full-stack engineering.</p>
+                    <p>With an AICTE ML Engineering Internship under my belt and multiple hackathon finals, I build systems that are secure, scalable, and beautifully designed.</p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-box">
+                            <h3 class="counter" data-target="9">0</h3><span class="text-primary">+</span>
+                            <p>CGPA</p>
+                        </div>
+                        <div class="stat-box">
+                            <h3 class="counter" data-target="600">0</h3><span class="text-cyan">+</span>
+                            <p>DSA Problems</p>
+                        </div>
+                        <div class="stat-box">
+                            <h3 class="counter" data-target="4">0</h3><span class="text-accent">+</span>
+                            <p>Major Projects</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-panel">
+                            <span class="timeline-date">2025</span>
+                            <h3>AICTE ML Engineering Intern</h3>
+                            <p>Built end-to-end ML pipelines with 85%+ accuracy.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-panel">
+                            <span class="timeline-date">2025</span>
+                            <h3>AWS Cloud Practitioner</h3>
+                            <p>Certified in AWS cloud infrastructure and security.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content glass-panel">
+                            <span class="timeline-date">2026</span>
+                            <h3>Odoo × SPIT Hackathon</h3>
+                            <p>National finalist for enterprise workflow solutions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="section-header text-center">
+                <span class="eyebrow">Featured Work</span>
+                <h2 class="section-title">Premium <span class="text-cyan">Case Studies</span></h2>
+            </div>
+
+            <div class="projects-grid">
+                <!-- VaultStream -->
+                <div class="project-card 3d-tilt">
+                    <div class="project-visual" style="--c1: #6C63FF; --c2: #00F5FF;">
+                        <span class="project-emoji">🔒</span>
+                        <div class="project-tech">
+                            <span>Java</span><span>Spring Boot</span><span>Docker</span>
+                        </div>
+                    </div>
+                    <div class="project-info glass-panel">
+                        <h3>VaultStream</h3>
+                        <p>Secure Software Distribution Platform with RBAC and JWT.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Kunjalb29" class="btn-sm"><i data-lucide="github"></i> Code</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SmartBasket -->
+                <div class="project-card 3d-tilt">
+                    <div class="project-visual" style="--c1: #FF6B6B; --c2: #FFB86B;">
+                        <span class="project-emoji">🛒</span>
+                        <div class="project-tech">
+                            <span>React</span><span>AI</span><span>Computer Vision</span>
+                        </div>
+                    </div>
+                    <div class="project-info glass-panel">
+                        <h3>SmartBasket</h3>
+                        <p>AI Smart Shopping Cart Assistant with product recommendations.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Kunjalb29" class="btn-sm"><i data-lucide="github"></i> Code</a>
+                            <a href="https://frontend-blue-mu-35.vercel.app/" class="btn-sm btn-primary"><i data-lucide="external-link"></i> Live</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KL-Eats -->
+                <div class="project-card 3d-tilt">
+                    <div class="project-visual" style="--c1: #00FFA3; --c2: #00F5FF;">
+                        <span class="project-emoji">🍔</span>
+                        <div class="project-tech">
+                            <span>Java</span><span>React</span><span>PostgreSQL</span>
+                        </div>
+                    </div>
+                    <div class="project-info glass-panel">
+                        <h3>KL-Eats</h3>
+                        <p>Campus food pre-booking platform with high concurrency.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/Kunjalb29" class="btn-sm"><i data-lucide="github"></i> Code</a>
+                            <a href="https://www.kleats.in/" class="btn-sm btn-primary"><i data-lucide="external-link"></i> Live</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Universe -->
+        <section id="skills" class="section">
+            <div class="section-header">
+                <span class="eyebrow">Tech Stack</span>
+                <h2 class="section-title">Interactive <span class="text-primary">Skills Universe</span></h2>
+            </div>
+            
+            <div class="skills-grid">
+                <div class="skill-category glass-panel">
+                    <h3>Frontend</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar"><div class="skill-info"><span>React</span><span>95%</span></div><div class="bar-bg"><div class="bar-fill" style="--w: 95%; --c: #00F5FF"></div></div></div>
+                        <div class="skill-bar"><div class="skill-info"><span>HTML/CSS</span><span>90%</span></div><div class="bar-bg"><div class="bar-fill" style="--w: 90%; --c: #00F5FF"></div></div></div>
+                    </div>
+                </div>
+                <div class="skill-category glass-panel">
+                    <h3>Backend</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar"><div class="skill-info"><span>Java / Spring Boot</span><span>95%</span></div><div class="bar-bg"><div class="bar-fill" style="--w: 95%; --c: #6C63FF"></div></div></div>
+                        <div class="skill-bar"><div class="skill-info"><span>Node.js</span><span>85%</span></div><div class="bar-bg"><div class="bar-fill" style="--w: 85%; --c: #6C63FF"></div></div></div>
+                    </div>
+                </div>
+                <div class="skill-category glass-panel">
+                    <h3>Cloud & DevOps</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar"><div class="skill-info"><span>AWS</span><span>85%</span></div><div class="bar-bg"><div class="bar-fill" style="--w: 85%; --c: #00FFA3"></div></div></div>
+                        <div class="skill-bar"><div class="skill-info"><span>Docker / K8s</span><span>80%</span></div><div class="bar-bg"><div class="bar-fill" style="--w: 80%; --c: #00FFA3"></div></div></div>
+                    </div>
+                </div>
+                <div class="skill-category glass-panel">
+                    <h3>AI / ML</h3>
+                    <div class="skill-bars">
+                        <div class="skill-bar"><div class="skill-info"><span>Machine Learning</span><span>85%</span></div><div class="bar-bg"><div class="bar-fill" style="--w: 85%; --c: #FFB86B"></div></div></div>
+                        <div class="skill-bar"><div class="skill-info"><span>Python</span><span>85%</span></div><div class="bar-bg"><div class="bar-fill" style="--w: 85%; --c: #FFB86B"></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GitHub Integration -->
+        <section id="github" class="section">
+            <div class="section-header text-center">
+                <span class="eyebrow">Open Source</span>
+                <h2 class="section-title">GitHub <span class="text-cyan">Activity</span></h2>
+            </div>
+            
+            <div class="github-container glass-panel">
+                <div class="gh-stats">
+                    <div class="gh-stat">
+                        <h4>1,204</h4>
+                        <p>Contributions</p>
+                    </div>
+                    <div class="gh-stat">
+                        <h4>42</h4>
+                        <p>Repositories</p>
+                    </div>
+                    <div class="gh-stat">
+                        <h4>128</h4>
+                        <p>Longest Streak</p>
+                    </div>
+                </div>
+                <!-- Simulated GitHub Heatmap -->
+                <canvas id="gh-heatmap" height="100"></canvas>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h2 class="section-title">Let's build the <span class="text-primary">future.</span></h2>
+                    <p style="margin-top: 20px; color: var(--text-muted);">Looking for a cloud architect or full-stack engineer? Let's connect.</p>
+                    
+                    <div class="contact-cards" style="margin-top: 40px;">
+                        <a href="mailto:kunjalb882@gmail.com" class="contact-card glass-panel magnetic">
+                            <i data-lucide="mail"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>kunjalb882@gmail.com</p>
+                            </div>
+                        </a>
+                        <a href="https://linkedin.com/in/kunjal-baseshankar-16a174292" class="contact-card glass-panel magnetic">
+                            <i data-lucide="linkedin"></i>
+                            <div>
+                                <h4>LinkedIn</h4>
+                                <p>Connect with me</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <form class="contact-form glass-panel">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" required placeholder="John Doe">
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" required placeholder="john@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea required rows="4" placeholder="How can I help you?"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-full magnetic">Send Message <i data-lucide="send"></i></button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Kunjal Baseshankar. All rights reserved.</p>
+        <p class="text-muted">Built with HTML, CSS, Three.js & Vanilla JavaScript</p>
+    </footer>
+
+    <script src="main.js"></script>
+    <script>lucide.createIcons();</script>
+</body>
+</html>
