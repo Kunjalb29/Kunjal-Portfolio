@@ -29,7 +29,7 @@ If you appreciate my work and would like to support future projects, you can fue
 
 <div align="center">
 
-[☕ Buy Me a Coffee](YOUR_BUYMEACOFFEE_LINK)
+[☕ Buy Me a Coffee](https://buymeacoffee.com/kunjalb8826)
 
 *"Every coffee helps turn ideas into reality."*
 
