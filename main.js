@@ -567,11 +567,17 @@ gsap.utils.toArray('.ach-card').forEach(function(el, i) {
     gsap.from(el, { scrollTrigger: { trigger: el, start: 'top 85%', toggleActions: 'play none none reverse' }, y: 40, opacity: 0, duration: 0.8, delay: i * 0.12, ease: 'power3.out' });
 });
 gsap.utils.toArray('.proj-showcase-card, .proj-duo-card').forEach(function(el, i) {
-    gsap.from(el, { scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none reverse' }, y: 50, opacity: 0, duration: 0.9, delay: i * 0.1, ease: 'power3.out' });
+    if (!el.classList.contains('reveal-up')) {
+        gsap.from(el, { scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none reverse' }, y: 50, opacity: 0, duration: 0.9, delay: i * 0.1, ease: 'power3.out' });
+    }
 });
 gsap.utils.toArray('.hack-card').forEach(function(el, i) {
-    gsap.from(el, { scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none reverse' }, y: 40, opacity: 0, duration: 0.7, delay: i * 0.08, ease: 'power3.out' });
+    if (!el.classList.contains('reveal-up')) {
+        gsap.from(el, { scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none reverse' }, y: 40, opacity: 0, duration: 0.7, delay: i * 0.08, ease: 'power3.out' });
+    }
 });
 gsap.utils.toArray('.cert-card').forEach(function(el, i) {
-    gsap.from(el, { scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none reverse' }, y: 40, opacity: 0, scale: 0.97, duration: 0.7, delay: i * 0.08, ease: 'power3.out' });
+    if (!el.classList.contains('reveal-up')) {
+        gsap.from(el, { scrollTrigger: { trigger: el, start: 'top 88%', toggleActions: 'play none none reverse' }, y: 40, opacity: 0, scale: 0.97, duration: 0.7, delay: i * 0.08, ease: 'power3.out' });
+    }
 });
