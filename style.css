@@ -484,7 +484,7 @@ main, nav, footer, .preloader, .social-sidebar { position: relative; z-index: 1;
 .exp-dots-row::before { content: ''; position: absolute; left: 60px; right: 60px; top: 50%; transform: translateY(-50%); height: 1px; background: linear-gradient(90deg, transparent, var(--border), var(--border), transparent); }
 .exp-dot { width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--border); background: var(--bg); z-index: 1; position: relative; transition: all 0.3s; }
 .exp-dot-active { border-color: var(--cyan); box-shadow: 0 0 12px rgba(0,245,255,0.5); background: rgba(0,245,255,0.15); }
-.exp-cards-row { display: flex; gap: 18px; overflow: hidden; padding: 8px 4px; transition: transform 0.5s cubic-bezier(0.22,1,0.36,1); }
+.exp-cards-row { display: flex; gap: 18px; padding: 8px 4px; transition: transform 0.5s cubic-bezier(0.22,1,0.36,1); }
 .exp-card { min-width: calc(33.333% - 12px); flex-shrink: 0; padding: 26px; border-radius: 14px; transition: transform 0.3s; }
 .exp-card:hover { transform: translateY(-4px); }
 .exp-card-active { border-color: rgba(0,245,255,0.3); }
