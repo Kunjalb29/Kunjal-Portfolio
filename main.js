@@ -298,7 +298,7 @@ if (expCardsRow && expPrev && expNext) {
     var expIndex = 0;
     var expCards = expCardsRow.querySelectorAll('.exp-card');
 
-    function visibleCount() { return window.innerWidth > 900 ? 3 : (window.innerWidth > 600 ? 2 : 1); }
+    function visibleCount() { return window.innerWidth > 1100 ? 3 : (window.innerWidth > 640 ? 2 : 1); }
     function maxIndex() { return Math.max(0, expCards.length - visibleCount()); }
     function updateExpDots() { expDots.forEach(function(d, i) { d.classList.toggle('exp-dot-active', i === expIndex); }); }
     function slideExp(dir) {
