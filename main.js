@@ -295,37 +295,44 @@ var expNext = document.getElementById('exp-next');
 var expDots = document.querySelectorAll('.exp-dot');
 
 if (expCardsRow && expPrev && expNext) {
-    var expIndex = 0;
+    var activeCardIndex = 2; // Default active card in HTML is the 3rd one (index 2)
     var expCards = expCardsRow.querySelectorAll('.exp-card');
 
     function visibleCount() { return window.innerWidth > 1100 ? 3 : (window.innerWidth > 640 ? 2 : 1); }
     function maxIndex() { return Math.max(0, expCards.length - visibleCount()); }
-    function updateExpDots() { expDots.forEach(function(d, i) { d.classList.toggle('exp-dot-active', i === expIndex); }); }
-    function slideExp(dir) {
-        expIndex = Math.max(0, Math.min(expIndex + dir, maxIndex()));
+    
+    function updateTimeline() {
+        expDots.forEach(function(d, i) { d.classList.toggle('exp-dot-active', i === activeCardIndex); });
+        expCards.forEach(function(card, i) { card.classList.toggle('exp-card-active', i === activeCardIndex); });
+        var expIndex = Math.max(0, Math.min(activeCardIndex, maxIndex()));
         var firstCard = expCardsRow.querySelector('.exp-card');
         if (!firstCard) return;
         var cardW = firstCard.offsetWidth + 18;
         gsap.to(expCardsRow, { x: -expIndex * cardW, duration: 0.5, ease: 'power3.out' });
-        updateExpDots();
     }
-    expPrev.addEventListener('click', function() { slideExp(-1); });
-    expNext.addEventListener('click', function() { slideExp(1); });
+
+    function navigateTimeline(dir) {
+        activeCardIndex = Math.max(0, Math.min(activeCardIndex + dir, expCards.length - 1));
+        updateTimeline();
+    }
+
+    expPrev.addEventListener('click', function() { navigateTimeline(-1); });
+    expNext.addEventListener('click', function() { navigateTimeline(1); });
 
     var touchStartX = 0;
     expCardsRow.addEventListener('touchstart', function(e) { touchStartX = e.touches[0].clientX; }, { passive: true });
     expCardsRow.addEventListener('touchend', function(e) {
         var diff = touchStartX - e.changedTouches[0].clientX;
-        if (Math.abs(diff) > 50) slideExp(diff > 0 ? 1 : -1);
+        if (Math.abs(diff) > 50) navigateTimeline(diff > 0 ? 1 : -1);
     }, { passive: true });
+
     window.addEventListener('resize', function() {
-        expIndex = Math.min(expIndex, maxIndex());
+        var expIndex = Math.max(0, Math.min(activeCardIndex, maxIndex()));
         var firstCard = expCardsRow.querySelector('.exp-card');
         if (!firstCard) return;
         gsap.set(expCardsRow, { x: -expIndex * (firstCard.offsetWidth + 18) });
-        updateExpDots();
     });
-    updateExpDots();
+    updateTimeline();
 }
 
 /* ================================================
