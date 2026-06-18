@@ -319,6 +319,14 @@ if (expCardsRow && expPrev && expNext) {
     expPrev.addEventListener('click', function() { navigateTimeline(-1); });
     expNext.addEventListener('click', function() { navigateTimeline(1); });
 
+    // Make dots interactive
+    expDots.forEach(function(dot, idx) {
+        dot.addEventListener('click', function() {
+            activeCardIndex = idx;
+            updateTimeline();
+        });
+    });
+
     var touchStartX = 0;
     expCardsRow.addEventListener('touchstart', function(e) { touchStartX = e.touches[0].clientX; }, { passive: true });
     expCardsRow.addEventListener('touchend', function(e) {
