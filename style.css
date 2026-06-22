@@ -482,12 +482,12 @@ main, nav, footer, .preloader, .social-sidebar { position: relative; z-index: 1;
 .exp-timeline-track { overflow: hidden; }
 .exp-dots-row { display: flex; justify-content: space-between; align-items: center; position: relative; padding: 0 60px; margin-bottom: 24px; }
 .exp-dots-row::before { content: ''; position: absolute; left: 60px; right: 60px; top: 50%; transform: translateY(-50%); height: 1px; background: linear-gradient(90deg, transparent, var(--border), var(--border), transparent); }
-.exp-dot { width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--border); background: var(--bg); z-index: 1; position: relative; transition: all 0.3s; }
+.exp-dot { width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--border); background: var(--bg); z-index: 1; position: relative; transition: all 0.3s; cursor: pointer; }
 .exp-dot-active { border-color: var(--cyan); box-shadow: 0 0 12px rgba(0,245,255,0.5); background: rgba(0,245,255,0.15); }
 .exp-cards-row { display: flex; gap: 18px; padding: 8px 4px; transition: transform 0.5s cubic-bezier(0.22,1,0.36,1); }
 .exp-card { min-width: calc(33.333% - 12px); flex-shrink: 0; padding: 26px; border-radius: 14px; transition: transform 0.3s; }
 .exp-card:hover { transform: translateY(-4px); }
-.exp-card-active { border-color: rgba(0,245,255,0.3); }
+.exp-card-active { border-color: rgba(0,245,255,0.4); box-shadow: 0 0 24px rgba(0,245,255,0.1), inset 0 0 0 1px rgba(0,245,255,0.15); }
 .exp-badge { display: inline-block; font-size: 0.62rem; font-weight: 700; letter-spacing: 1px; padding: 3px 10px; border-radius: 50px; margin-bottom: 12px; text-transform: uppercase; }
 .exp-badge-hack{background:rgba(255,183,0,0.15);color:#FFB86B} .exp-badge-project{background:rgba(0,245,255,0.1);color:var(--cyan)} .exp-badge-leader{background:rgba(108,99,255,0.15);color:var(--primary)} .exp-badge-ai{background:rgba(162,89,255,0.15);color:#A259FF} .exp-badge-cloud{background:rgba(0,255,163,0.1);color:var(--green)} .exp-badge-intern{background:rgba(255,107,107,0.15);color:var(--red)}
 .exp-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }

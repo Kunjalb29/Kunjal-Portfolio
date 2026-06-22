@@ -295,7 +295,7 @@ var expNext = document.getElementById('exp-next');
 var expDots = document.querySelectorAll('.exp-dot');
 
 if (expCardsRow && expPrev && expNext) {
-    var activeCardIndex = 2; // Default active card in HTML is the 3rd one (index 2)
+    var activeCardIndex = 0; // Start at the first card
     var expCards = expCardsRow.querySelectorAll('.exp-card');
 
     function visibleCount() { return window.innerWidth > 1100 ? 3 : (window.innerWidth > 640 ? 2 : 1); }
